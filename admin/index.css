@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1:checked {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+.form-group button {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    /* Allow vertical resizing of textarea */
+}
+
+.form-group button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+
+.menu {
+    margin-left: 10px;
+    width: 400px;
+}
+
+.logo {
+    width: 100%;
+    background-color: #3c3c3c;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 25px 25px;
+}
+
+.logo img {
+    width: 200px;
+    border-radius: 100%;
+    padding: 20px;
+}
+
+.alloptions {
+    width: 100%;
+    display: block;
+}
+
+.alloptions button {
+    transition: 0.5s;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    background-color: #fff;
+    border: 1px solid #3c3c3c;
+    border-radius: 10px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.alloptions button:hover {
+    transition: 0.5s;
+    background-color: #3c3c3c;
+    color: white;
+}
+
+table {
+    margin: auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+table tr img {
+    width: 100px;
+}
+
+.ourProduct,
+.Users {
+    display: none;
+}
+
+.insertProduct {
+    display: block;
+}
+
+.btn:active {
+    background-color: #3c3c3c;
+    color: white;
+}

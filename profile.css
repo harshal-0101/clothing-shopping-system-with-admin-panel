@@ -1,0 +1,75 @@
+body {
+    background-color: rgba(0, 0, 0, 0.909);
+}
+
+.pro-nav {
+    display: flex;
+}
+
+.profile {
+    border: 1px solid rgba(255, 255, 255, 0.557);
+    background-color: rgb(25, 25, 25);
+    max-width: 1000px;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.301);
+    margin: auto;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+.user_name {
+    color: white;
+}
+
+.profile_photo {
+    margin-top: 8px;
+    width: 150px;
+    text-align: center;
+}
+
+.profile_photo img {
+    width: 100px;
+    border-radius: 50px;
+}
+
+.profile_photo img:hover {
+    transition: 0.5s;
+    box-shadow: 2px 2px 10px 0px rgb(0, 0, 0);
+}
+
+.other-info {
+    padding: 50px;
+    color: rgba(255, 255, 255, 0.653);
+}
+
+.other-options {
+    width: 100%;
+}
+
+.other-options ul li {
+    margin: 10px;
+    list-style: none;
+    padding: 15px;
+    width: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.557);
+    border-radius: 20px;
+}
+
+.other-options ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.653);
+    font-size: 20px;
+}
+
+.other-options ul li button {
+    background-color: transparent;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.653);
+    border: 0;
+    cursor: pointer;
+}
+
+.other-options ul li i {
+    color: rgba(255, 255, 255, 0.653);
+    font-size: 20px;
+    margin-right: 10px;
+}

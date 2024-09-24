@@ -1,0 +1,240 @@
+body {
+    background-color: #f4f4f4;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.909);
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.form {
+    margin-top: 50px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.466);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    background-color: #00000083;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: rgb(136, 43, 176);
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+    background-color: rgb(6, 12, 92);
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: royalblue;
+}
+
+.signin a:hover {
+    text-decoration: underline royalblue;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 350px;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.537);
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.inputF {
+    width: 150px;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.inputL {
+    width: 150px;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .inputF+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .inputF:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .inputF:focus+span,
+.form label .inputF:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid+span {
+    color: green;
+}
+
+.form label .inputF:valid+span {
+    color: green;
+}
+
+.form label .inputL+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .inputL:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .inputL:focus+span,
+.form label .inputL:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .inputL:valid+span {
+    color: green;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+}
+
+.submit:hover {
+    background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+.error {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    width: 410px;
+    height: 50px;
+    border: 1px solid red;
+    background-color: rgb(18, 18, 18);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.388);
+    border-radius: 25px;
+    color: white;
+}
