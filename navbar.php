@@ -108,7 +108,7 @@ include "version.php";
                         <!-- <li><a href="/Clothing_website/login_system/Register_page.php">register & login</a></li> -->
                 </ul>
 
-               <?php $p_sql = "SELECT * FROM `cart` WHERE `user_id` = '$sessionID'";
+               <?php $p_sql = "SELECT * FROM `cart` WHERE `sessionID` = '$sessionID'";
                 $product_items = $conn->query($p_sql); ?>
                 <div class="cart-pro">
                     <ul>

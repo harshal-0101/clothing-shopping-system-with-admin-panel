@@ -43,7 +43,10 @@
             </div>
         </footer>
         <hr>
-        <center><p>CopyRight© Clothio 2024-25</p></center>
+        <center><p>CopyRight© Clothio 2024-25
+            <br>
+            made by Harshal Mahajan
+        </p></center>
     </div>
 </body>
 

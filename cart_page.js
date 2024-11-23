@@ -69,18 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             quantityInput.value = newQuantity;
 
-            // Update total price
-            // const currentPrice = totalPriceSpan.innerHTML;
             const totalPrice = quantity * priceValue;
-            // // var finalTatalPrice = parseInt(currentPrice) + parseFloat(totalPrice.toFixed(2));
-            // totalPriceSpan.textContent = parseFloat(totalPrice.toFixed(2));
 
             const xhr = new XMLHttpRequest();
             xhr.open('POST', 'cartconfig.php', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onreadystatechange = () => {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    console.log(xhr.responseText); // Optional: handle server response
+                    console.log(xhr.responseText);
                 }
             };
             xhr.send(`product_id=${encodeURIComponent(productId)}&quantity=${encodeURIComponent(quantity)}&total_price=${encodeURIComponent(totalPrice.toFixed(2))}`);
@@ -89,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Function to update cart
 function updateCart(productId, quantity, totalPrice) {
     fetch('cartconfig.php', {
             method: 'POST',
@@ -105,7 +100,7 @@ function updateCart(productId, quantity, totalPrice) {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                // Update the UI with the new total price
+
                 const totalPriceSpan = document.getElementById('total-price').innerText = data.total_price;
             } else {
                 alert('Update failed: ' + data.message);
@@ -113,3 +108,10 @@ function updateCart(productId, quantity, totalPrice) {
         })
         .catch(error => console.error('Error:', error));
 }
+
+setTimeout(function() {
+    const insertstatus = document.querySelector('.insertMsg');
+    if (insertstatus) {
+        insertstatus.remove();
+    }
+}, 5000)

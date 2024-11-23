@@ -21,16 +21,20 @@ body::-webkit-scrollbar {
 
 .header-content {
     margin: auto;
-    width: 95%;
+    width: 100%;
     max-height: 600px;
 }
 
-.header-content img {
+.header-content video {
     width: 100%;
     max-height: 700px;
     margin-top: 90px;
     z-index: 0px;
     border-radius: 25px;
+}
+
+.header-content h1 {
+    position: absolute;
 }
 
 .mian-page {
@@ -401,7 +405,7 @@ table p {
     margin-bottom: -16px;
 }
 
-.product-info-p p span {
+.product-info-p p .discount {
     color: white;
     background-color: red;
     padding: 1px;
@@ -410,13 +414,23 @@ table p {
 
 .size {
     text-align: center;
-    border: 1px solid rgb(108, 108, 108);
-    width: 20px;
+    width: 100%;
     border-radius: 5px;
     padding: 1px;
+    display: flex;
+    justify-content: space-between;
 }
 
+.size span i {
+    font-size: 20px;
+    cursor: pointer;
+}
 
+#like-btn {
+    display: none;
+}
+
+.size
 /* .p-count {
        text-align: center;
        align-self: center;

@@ -1,13 +1,3 @@
-<?php
-include 'Config.php';
-session_start(); 
-$user_id = $_SESSION['user_id'];
-
-if(!isset($user_id)){
-    header('location:loginR.php');
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +10,22 @@ if(!isset($user_id)){
 </head>
 
 <body>
- 
+<?php  include 'navbar.php' ;
+
+include 'Config.php';
+$user_id = $_SESSION['user_id'];
+
+if(!isset($user_id)){
+    header('location:loginR.php');
+}
+?>
+    <br>
+    <br><br><br>
+    <br>
     <div class="profile">
         <div class="pro-nav">
             <div class="profile_photo">
-                <img src="profile_photo.png" alt="">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.4nBvLMYKlGTI5JfKj643XgHaHa&pid=Api&P=0&h=180" alt="">
             </div>
             <div class="user_name">
                 <?php 
@@ -44,25 +45,35 @@ if(!isset($user_id)){
         <div class="other-info">
             <hr>
             <h3>Address</h3>
-            <p id="addr">udhna,surat,gujarat,india</p>
+            <p id="addr"><?php echo  $fetch['Address']  ?></p>
 
             <h3>Phone no</h3>
-            <p id="mobile-no">+91 78610 23200</p>
+            <p id="mobile-no"><?php echo  $fetch['P_number']  ?></p>
+
+            <h3>Gender</h3>
+            <p id="mobile-no"><?php echo  $fetch['Gender']  ?></p>
         </div>
         <div class="other-options">
             <ul>
-                <li><a href="#"><i class="fa-solid fa-pen-to-square"></i>ADD Profile</a></li>
-                <li><a href="#"><i class="fa-solid fa-gear"></i>Setting</a></li> 
-                <li><form method="post"> <i class="fa-solid fa-arrow-right-from-bracket"></i><button type="submit" id="submit-btn" name="logout">Logout</button> </form></li>
+                <li><a href="Update_info.php"><i class="fa-solid fa-pen-to-square"></i> Add Profile</a></li>
+                <li><a href="#"><i class="fa-solid fa-box"></i> Orders</a></li> 
+                <li><form method="get"> <i class="fa-solid fa-arrow-right-from-bracket"></i><button type="submit" id="submit-btn" name="logout">Logout</button> </form></li>
             </ul>
         </div>
     </div>
 </body>
 
 </html>
-<style>
-  
-</style>
+
+<?php 
+
+ if(isset($_GET['logout'])){
+    session_destroy();
+    header("location:/CLothing_website/home.php");
+ }
+
+?>
+
 <script>
     var address = document.getElementById("add-address");
     var edadd = document.getElementById("addr");

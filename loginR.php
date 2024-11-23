@@ -20,6 +20,20 @@ if(isset($_POST["submit"]))
         if(isset($info['id'])){
              session_start(); 
              $_SESSION['user_id'] = $info['id'];
+
+             $sessionID = $_SESSION['sessionId'];
+             $cart = "SELECT * FROM `cart` WHERE `sessionID` = '$sessionID';"; 
+             $query = mysqli_query($conn, $cart);  
+
+             if( mysqli_num_rows($query)    > 0){
+                $sql = "UPDATE `cart` SET `userID` = ? WHERE `sessionID` = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("is", $info, $sessionID);
+                $stmt->execute();
+                $stmt->close();
+             }
+             
+
              header("location:/CLothing_website/home.php");
 
         }

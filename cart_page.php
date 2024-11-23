@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'Config.php';
 include "version.php"; 
 
@@ -27,6 +28,7 @@ include "version.php";
              $deleteQ = " DELETE FROM `cart` WHERE `Cart_id` = $id;";
              mysqli_Query($conn,$deleteQ);
              header("location:/CLothing_website/cart_page.php");
+             exit;
            }    
        ?> 
         
@@ -56,15 +58,36 @@ include "version.php";
             </div>
         </header>
         <main>
+              <!-- <---------------------------- cart section ----------------------->
             <div class="cart-container">
                 
                 <div class="cart-product-checkout"  id="cart-block">
 
                     <div class="cart-box">
                         <h4 style="color: white;" class="title">Your Product <i class="fa-solid fa-basket-shopping"></i></h4><br>
+                    
                       <?php
 
-                              $p_sql = "SELECT * FROM `cart` WHERE `user_id` = '$sessionID'";
+                      if (isset($_GET['chackout'])) {
+                          if (isset($_SESSION['user_id'])) {
+                                 header("location:/CLothing_website/addres.php");
+                                 exit;
+                          } else {
+                              $insertStatus = False ;
+                              echo $insertMag = "<h4 class='insertMsg'>Please login now  <a href='loginR.php'>Login</a></h4>";
+                            }
+                          }
+                        
+                      
+
+                    //   if($insertStatus == true){
+                    //     echo $insertMag ; 
+                    //   }
+                    //   else{
+                    //     echo $insertMag ;
+                    //   }
+
+                              $p_sql = "SELECT * FROM `cart` WHERE `sessionID` = '$sessionID'";
                               $product_items = $conn->query($p_sql); 
                               $totalP=0 ;
                         //   if(mysqli_num_rows($product_items) > 0){ 
@@ -72,9 +95,10 @@ include "version.php";
                                    $totalP += $row['total_price'];
                                 ?>  
 
-                              <form  class="cart" id="cart-cart">
+                              <form  class="cart" id="cart-cart" method="get" >
+                                
                                   <div class="img-product">
-                                      <img src="product_image/<?php echo $row['image']?>" alt="">
+                                      <img src="product_image/<?php echo $row['image'];?>" alt="">
                                   </div>
                                   <div class="product-info">
                                       <h1><?php echo $row['P_name']?></h1>
@@ -82,7 +106,7 @@ include "version.php";
                                       
                                   </div>
                                      <div class="cart-item" data-product-id="<?php echo $row['Cart_id'];  ?>">
-                                     <input type="hidden" class="price-value" value="<?php echo $row['P_price']?>" class="Price-Val">
+                                     <input type="hidden" class="price-value" value="<?php echo $row['P_price']?>" class="Price-Val" name="Pprice">
                                          <button type="button" id="minus" class="quantity-btn" data-action="minus">-</button>
                                          <div class="count-qty">
                                              <input id="QTYNUM" type="text" class="quantity-input" value="<?php echo $row['qty']?>" min="1">
@@ -90,7 +114,7 @@ include "version.php";
                                          <button type="button" id="plus" class="quantity-btn" data-action="plus">+</button>
                                          <!-- <div class="status"></div> -->
                                      </div>
-                                     <button type="submit" class="remove-btn" value="<?php echo $row['Cart_id'] ?>" name="d_cart"><i class="fa-solid fa-trash"></i></button>
+                                     <button type="submit" class="remove-btn" name="d_cart" value="<?php echo $row['Cart_id']; ?>" ><i class="fa-solid fa-trash"></i></button>
                                      <div class="status">
                                         
                                      </div>
@@ -107,6 +131,7 @@ include "version.php";
                       <?php 
                        $emtyCart = False;
                       if(mysqli_num_rows($product_items) > 0){  ?>
+                      <form method="get">
                         <div class="ckeckout-product">
                            <h4>Checkout</h4>
                            <div class="c-out">
@@ -135,49 +160,103 @@ include "version.php";
                             <table>
                                 <tr>
                                     <td>Total :</td>
-                                    <td><?php echo $totalP + 30 + 50 ?></td>
+                                    <td><?php 
+                                     $totalOrderPrice = 0 ;
+                                    echo $totalOrderPrice = $totalP + 30 + 50 ?></td>
+                                    <input type="hidden" value="<?php echo $totalOrderPrice ?> " name="totalOrderPrice">
                                 </tr>
                             </table>
         
                            </div>
                            
                             <div class="pay-potion">
-                              <label for="">Select Payment Option</label><br>
-                              
-                              <table>
-                                <tr>
-                                    <td><label for="UPI">UPI</label> <input class="input"  id="UPI" value="UPI" type="radio" name="pay-option" checked></td>
-                                    <td><label for="cart">cart</label> <input class="input" id="cart" value="cart" type="radio" name="pay-option"></td>
-                                    <td><label for="Other">Other</label> <input  id="Other" class="input"  value="Other" type="radio" name="pay-option" ></td>
-                                </tr>
-                               </table>
-                                <br>
-                                <Button id="pay-btn" onclick="pay_btn()">Pay</Button>
+                                <Button id="pay-btn" onclick="pay_btn()" name="chackout">Go to chackout</Button>
                              </div>
                         </div>
+                        </form>
                         <?php }
                             else{
                                 $emtyCart = true;
                             }
-                             ?>
+
+                         ?>
+                            
+
+                           
                 </div> 
+
+  <!-- <----------------------------order section ----------------------->
+
                 <div id="orders-box">
                   <p>Your Orders</p>
-                  <div class="order-container">
-                    
-                  </div>
-                </div>    
+                  
+                    <div class="order-container">
+                        <div class="order">
+                            <div class="products-BOX">
+                              <div class="Products">
+                                <div class="p_img">
+                                    <img src="https://media.voguebusiness.com/photos/5ce3d84932029c6ded13e829/2:3/w_2560%2Cc_limit/online-product-may-19-article.jpg" alt="">
+                                   </div>
+                                   <div class="P_info">
+                                    <p>Product Brand <span>QTY:1</span></p>
+                                    <p>Product name</p>
+                                    <p>Total Price</p>
+                                    <button>remove</button>
+                                   </div> 
+                              </div>
+                              <br>
+                            </div>
+                            <div class="bill">
+                             <p>Detail</p>
+                             <div class="detail">
+                                <h3>Address</h3>
+                                <p>123 Maple Street Springfield, IL 62704 
+                                    USA</p>
+                                 <h3>Phone Number</h3>
+                                 <p>0394234510</p> 
+                                 <table>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>Order Date</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email23@gamil.com</td>
+                                        <td>01/02/2023</td>
+                                    </tr>
+                                 </table>  
+                                 <p>Product Detail</p>
+                                 <table>
+                                    <tr>
+                                        <td>Total Price</td>
+                                        <td>QTY</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$99</td>
+                                        <td>1</td>
+                                    </tr>
+                                 </table>
+                                 <h3>Product ID</h3>  
+                                 <p>0987897</p>
+                                <div class="Order-btn">
+                                    <button>Cancel Order</button>
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                 </div>    
                 </div>
 
              <!-- -----------order-section--------------- -->
-             <div class="EmtyCart">
-                <?php
+             <!-- <div class="EmtyCart">
+                 <?php
                 if($emtyCart  ==  true){
                     echo "<i class='fa-solid fa-basket-shopping'></i><br>
                     <h1>Your cart is emty </h1> <a href='home.php'>Shop Now</a>";
                 }
                 ?>
-             </div>  
+             </div>   -->
              
 
         </main>
@@ -186,3 +265,5 @@ include "version.php";
 </body>
 </html>
 
+<?php ob_end_flush();
+ ?>

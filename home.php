@@ -29,37 +29,37 @@
 
             <!-- slider-hader -->
             <div class="header-content">
-                <img src="icon/Desktop - 11.png" alt="">
-                <!-- <video src="icon/Y2meta.app-3d product animation_ Garments-(1080p).mp4" autoplay loop type="video/mp4" muted></video> -->
+                <!-- <img src="icon/Desktop - 11.png" alt=""> -->
+             <video src="icon/clothvideo.mp4" autoplay loop type="video/mp4" muted></video> 
             </div>
 
         </div>
         <main>
             <div class="mian-page">
                 <div class="product-card">
-                    <h1>Up to 60% off | Styles for women</h1>
+                    <h1>Up to 60% off || Cloth collection</h1>
                     <table>
                         <tr>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF1-186-116._SY116_CB636048992_.jpg" alt="">
+                                <a href="#"><img src="icon/image1.jpg" alt="">
                                     <p>Women's Clothing</p>
                                 </a>
                             </td>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF2-186-116._SY116_CB636048992_.jpg" alt="">
-                                    <p>Footwear+Handbags</p>
+                                <a href="#"><img src="icon/image2.jpg" alt="">
+                                    <p>Pant</p>
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF4-186-116._SY116_CB636048992_.jpg" alt="">
-                                    <p>Watches</p>
+                                <a href="#"><img src="icon/image3.jpg" alt="">
+                                    <p>Soot for men</p>
                                 </a>
                             </td>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF3-186-116._SY116_CB636048992_.jpg" scr="google.com" alt="">
-                                    <p>Fashion jewellery</p>
+                                <a href="#"><img src="icon/image4.jpg" scr="google.com" alt="">
+                                    <p>Coth collection</p>
                                 </a>
                             </td>
                         </tr>
@@ -67,28 +67,28 @@
                 </div>
 
                 <div class="product-card">
-                    <h1>Up to 60% off | Styles for men</h1>
+                    <h1>Up to 50% off || Cloth collection</h1>
                     <table>
                         <tr>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-1-186-116._SY116_CB636110853_.jpg" alt="">
+                                <a href="#"><img src="icon/image5.jpg" alt="">
                                     <p>Clothing</p>
                                 </a>
                             </td>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-2-186-116._SY116_CB636110853_.jpg" alt="">
-                                    <p>footwear</p>
+                                <a href="#"><img src="icon/image6.jpg" alt="">
+                                    <p>Traditional Cloth</p>
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-1-186-116._SY116_CB636055991_.jpg" alt="">
+                                <a href="#"><img src="icon/image7.jpg" alt="">
                                     <p>for family </p>
                                 </a>
                             </td>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-4-186-116._SY116_CB636055991_.jpg" alt="">
+                                <a href="#"><img src="icon/image8.jpg" alt="">
                                     <p>View all</p>
                                 </a>
                             </td>
@@ -97,29 +97,29 @@
                 </div>
 
                 <div class="product-card">
-                    <h1>Shop deals in Fashion</h1>
+                    <h1>Top deals in Fashion</h1>
                     <table>
                         <tr>
                             <td>
-                                <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_BOTTOMS_1x._SY116_CB624172947_.jpg" alt="">
-                                    <p>jeans under $50</p>
+                                <a href="#"><img src="icon/image9.jpg" alt="">
+                                    <p>shirt under ₹50</p>
                                 </a>
                             </td>
                             <td>
-                                <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_TOPS_1x._SY116_CB623353881_.jpg" alt="">
-                                    <p>Tops under $25</p>
+                                <a href="#"><img src="icon/image10.jpg" alt="">
+                                    <p>Hoodies </p>
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/QC_PC_186x116_7_PB._SY116_CB560732407_.jpg" alt="">
-                                    <p>Starting ₹99 | Toys & games</p>
+                                <a href="#"><img src="icon/image11.jpg" alt="">
+                                    <p>Starting ₹99 | for Kids</p>
                                 </a>
                             </td>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/QC_PC_186x116_4_Chirstmass_3._SY116_CB560739045_.jpg" alt="">
-                                    <p>Up to 60% off |jackets,dresses & more</p>
+                                <a href="#"><img src="icon/image12.jpg" alt="">
+                                    <p>star just ₹199 </p>
                                 </a>
                             </td>
                         </tr>
@@ -127,29 +127,29 @@
                 </div>
 
                 <div class="product-card">
-                    <h1>Shop deals in Fashion</h1>
+                    <h1>Top collection of clothes</h1>
                     <table>
                         <tr>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg" alt="">
-                                    <p>Air conditioners</p>
+                                <a href="#"><img src="icon/image13.jpg" alt="">
+                                    <p>Home collection</p>
                                 </a>
                             </td>
                             <td>
-                                <a href="#"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg" alt="">
-                                    <p>Refrigerators</p>
+                                <a href="#"><img src="icon/image14.jpg" alt="">
+                                    <p>Latest fashion</p>
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="https://www.amazon.in/"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg" alt="">
-                                    <p>Microwaves</p>
+                                <a href="#"><img src="icon/image15.jpg" alt="">
+                                    <p>for kids get %20 off </p>
                                 </a>
                             </td>
                             <td>
-                                <a href=""><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg" alt="">
-                                    <p>Whaching machines</p>
+                                <a href=""><img src="icon/image16.jpg" alt="">
+                                    <p>deal in just ₹99</p>
                                 </a>
                             </td>
                         </tr>
@@ -219,6 +219,7 @@
                                     </h3>
                                     <p>Size:
                                         <?php echo $row['P_sixe']?>
+                    
                                     </p>
                                 </div>
                             </div>
@@ -256,6 +257,7 @@
                                 <div class="product-img" value="<?php echo $items['image1']?>">
                                   <a href="product_detail.php?id=<?php echo $items['id'] ?>&name=<?php echo $items['P_ name'] ?>" target="black">
                                     <img src="product_image/<?php echo $items['image1']?>" alt="">
+
                                   </a>     
                                     <input class="Pimg" type="hidden" value="<?php echo $items['image1']?>">
                                     <input class="pid" type="hidden" value="<?php echo $items['id']?>">
@@ -275,11 +277,15 @@
                                         <input class="pprice" type="hidden" value="<?php echo $items['final_price']?>" >
                                         <input class="discount" type="hidden" value="<?php echo $items['discount']?>">
                                             ₹<?php echo $items['final_price'] ?>
-                                            <span>20%</span>
+                                            <span class="discount">20%</span>
                                         </p>
                                        
-                                        <p class="size">
+                                        <p class="size"> Size:
                                             <?php echo $items['P_sixe'] ?>
+                                            <span>
+                                                <i class="fa-regular fa-heart" id="unlike-btn"></i>
+                                                <i class="fa-solid fa-heart" id="like-btn"></i>
+                                            </span>
                                         </p>
 
                                     </div>

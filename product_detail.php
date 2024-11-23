@@ -1,5 +1,5 @@
 <?php 
-ob_start(); // Start output buffering
+ob_start(); // Start output buffering 
 
 include "version.php"; 
 include "Config.php";  
@@ -22,8 +22,19 @@ $sql = "SELECT * FROM `product`";
   <title>Document</title>
 </head>
 <body>
-  <div class="n_bar">
-  <?php  include 'navbar.php' ?>
+  <div class="n_bar"> 
+  <?php  include 'navbar.php' ;
+   if(isset($_POST['add-wishlist'])){
+      $productID = $_GET['id'];
+      $user_id = $_SESSION['user_id'];
+      $insert_wishlist = "INSERT INTO `wishlist`(`User_ID`, `Product_ID`) VALUES ('$user_id','$productID')";
+      $result = mysqli_query($conn,$insert_wishlist);
+      if($result){
+        echo "Successfully added In wishlist";
+      }
+
+   }
+  ?>
   </div>
   <br>
   <br>
@@ -56,8 +67,8 @@ $sql = "SELECT * FROM `product`";
       </div>
       <div class="product_text">
         <div class="icons">
-          <button id="FavouriteItemBTN" type="button"><i class="fa-regular fa-heart" id="dis-like"></i></button>
-          <button id="UNFavouriteItemBTN" type="button" ><i class="fa-solid fa-heart" id="like"></i></button>
+          <button id="FavouriteItemBTN" type="submit" name="add-wishlist"><i class="fa-regular fa-heart" id="dis-like"></i></button>
+          <button id="UNFavouriteItemBTN" type="submit" name="remove-wishlist" ><i class="fa-solid fa-heart" id="like"></i></button>
           <i class="fa-solid fa-share-nodes"></i>
         </div>
         <h2><?php echo $items['P_Brand'] ?></h2>
@@ -184,7 +195,7 @@ $sql = "SELECT * FROM `product`";
 </html>
 <?php
   $sessionID = $_SESSION['sessionId'];
-  $sqlQ = "SELECT * FROM `cart` WHERE `P_id` = $productID AND `user_id` = '$sessionID';"; 
+  $sqlQ = "SELECT * FROM `cart` WHERE `P_id` = $productID AND `sessionID` = '$sessionID';"; 
   $query = mysqli_query($conn, $sqlQ);  
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -204,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "<h1>Somethink wrong!</h1>";
      }
      else{
-       $queryInsert = "INSERT INTO `cart` (`P_id`, `user_id`, `P_brand`, `image`, `P_name`, `P_price`,`total_price`, `discount`, `qty`) VALUES ('$pID', '$sessionID', '$brand', '$image', '$name', '$price ','$Tprice', '$discount', '$qty');";
+       $queryInsert = "INSERT INTO `cart` (`P_id`, `sessionID`, `P_brand`, `image`, `P_name`, `P_price`,`total_price`, `discount`, `qty`) VALUES ('$pID', '$sessionID', '$brand', '$image', '$name', '$price ','$Tprice', '$discount', '$qty');";
        $query_insert = mysqli_query($conn, $queryInsert);
    
        if ($query_insert == true) {

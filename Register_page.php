@@ -2,6 +2,8 @@
 <?php
 include "Config.php";
 $error = false;
+$Register =  false  ;
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {   
 
@@ -11,17 +13,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   $email = $_POST["email"];
   $pass = $_POST["pass"];
   $Conpass=  $_POST["Cpass"];
+  $phone_n = $_POST["P_number"];
   if($Fname != null || $email != null)
   {
     
     if($pass == $Conpass)
     {
-      $sql = "INSERT INTO `user_info_table` ( `Fname`, `Lname`, `email`, `create_password`, `Confirm password`) VALUES ('$Fname', '$Lname', '$email','$pass', '$Conpass')";
+      $sql = "INSERT INTO `user_info_table` ( `Fname`, `Lname`, `email`, `create_password`, `Confirm password`,`P_number`) VALUES ('$Fname', '$Lname', '$email','$pass', '$Conpass','$phone_n')";
       $result = mysqli_query($conn,$sql);
        
       if($result)
       {
-          header("location:OTPprocess.html");
+      
+        $Register =  true  ;
+        header("location:OTPprocess.php");  
+   
       }
     }
   
@@ -60,7 +66,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 </head>
 
 <body>
-<?php  include 'navbar.php' ?>
+<?php  include 'navbar.php';
+      
+      if(isset($_POST['submit'])){
+       if($Register == true){
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['password'] = $_POST['pass'];
+        $_SESSION['request'] = true;
+        }
+        else{
+          $_SESSION['request'] = false;
+        }
+        
+      }
+?>
 
 <br>
 <br>
@@ -101,7 +120,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <input required="" placeholder="" type="password" class="input" name="Cpass" id="conpass    ">
         <span><i class="fa-solid fa-user-check"></i> Confirm password</span>
     </label>
-    <button id="RGT-btn" class="submit">Submit <i class="fa-solid fa-arrow-right"></i></button>
+    <label>
+        <input required="" placeholder="" type="text" class="input" name="P_number" id="P_number">
+        <span><i class="fa-solid fa-phone"></i> Phone Number</span>
+    </label>
+    <button id="RGT-btn" class="submit" name="submit">Submit <i class="fa-solid fa-arrow-right"></i></button>
     <p class="signin">Already have an acount ? <a href="loginR.php">Signin</a> </p>
 </form>
 </div>
