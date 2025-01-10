@@ -157,6 +157,18 @@
                 </div>
             </div>
 
+            <!-- <div class="slider-container">
+            <div class="slider">
+             <div class="slides">
+               <img src="https://tse1.mm.bing.net/th?id=OIP.utr3KThBybQ22f0qTjvR0gHaEK&pid=Api&P=0&h=180" alt="Image 1">
+               <img src="https://tse3.mm.bing.net/th?id=OIP.lmc22lDcOsl5RSTakx8K3gHaE8&pid=Api&P=0&h=180" alt="Image 2">
+               <img src="https://tse1.mm.bing.net/th?id=OIP.fezgjHSQzccEaxD5nYsszAHaDt&pid=Api&P=0&h=180" alt="Image 3">
+               <img src="image4.jpg" alt="https://tse2.mm.bing.net/th?id=OIP.sjHKKfq85oENeHGcLQW2FwHaE8&pid=Api&P=0&h=180">
+               <img src="https://tse1.mm.bing.net/th?id=OIP.fezgjHSQzccEaxD5nYsszAHaDt&pid=Api&P=0&h=180" alt="Image 5">
+             </div>
+            </div>
+            </div> -->
+
             <div class="categiry-container">
                 <h2>Category</h2>
                 <div class="categiry">

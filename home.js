@@ -119,4 +119,21 @@ document.addEventListener("DOMContentLoaded", function() {
     updateSlider();
 });
 
-// onclick="moveSlide(-1)"
+let currentIndex = 0;
+const images = document.querySelectorAll('.slides img');
+const totalImages = images.length;
+
+function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= totalImages) {
+        currentIndex = 0;
+    }
+    updateSlidePosition();
+}
+
+function updateSlidePosition() {
+    const newTransformValue = `translateX(-${currentIndex * 100}%)`;
+    document.querySelector('.slides').style.transform = newTransformValue;
+}
+
+setInterval(nextSlide, 3000);
